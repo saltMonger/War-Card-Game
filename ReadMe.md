@@ -35,6 +35,7 @@ The general flow of a game using the data and modules described above.
 What data needs to be stored and considered for scoring, gameplay, UI, etc.
 
 1. Card Data - Each card in a deck (52 cards) will need representation
+	+ Card ID - The "name" of the card.  This will be a combination of the suit and rank (e.g. Queen of Clubs would be "C11")
 	+ Card Rank (2 - 13) - The "strength" of a card.  A higher rank will beat a lower rank card.  Cards of equal rank will begin a War.
 	+ Card Image - The associated image to be displayed with the card when it is played.
 2. Player Data - A dataclass associated with each player (human and computer) for recording statistics for use during debugging.
