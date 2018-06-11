@@ -71,10 +71,21 @@ namespace WarCardGame.Controllers
             int numberOfCards = cardsToShuffle.Count;
             Random rand = new Random();
 
-            for(int i=0; i<numberOfCards; i++)
+            //may need a special case to remove the last card in the deck
+            for(int i=numberOfCards-1; i>=0; i--)
             {
-               int index = rand.Next(0, numberOfCards + 1);
+                //pick a random card
+                int index = rand.Next(0, i + 1);
+
+                //pull card out of "deck"
+                CardModel card = cardsToShuffle[index];
+                cardsToShuffle.RemoveAt(index);
+
+                //put it into the new deck
+                Cards.Enqueue(card);
             }
+
+            //cards should now be shuffled
         }
     }
 }
