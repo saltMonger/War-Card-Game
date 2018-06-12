@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WarCardGame.Models;
+using WarCardGameConsole.Models;
 
-namespace WarCardGame.Controllers
+namespace WarCardGameConsole.Controllers
 {
     public class DealerController : DeckController
     {
@@ -23,14 +23,14 @@ namespace WarCardGame.Controllers
                     string[] cardData = str.Split(',');
                     Cards.Enqueue(new CardModel()
                     {
-                        CardId = cardData[0] + cardData[1],
-                        CardRank = Int32.Parse(cardData[1]),
-                        ImagePath = cardData[2]
+                        CardId = cardData[2].Replace("_"," "),
+                        CardRank = Int32.Parse(cardData[1])
                     });
                 }
             }
         }
 
+        //this "deals" a deck of cards to a player and a computer, alternating the receipient of each new card
         public void Deal(DeckController playerDeck, DeckController computerDeck)
         {
             for(int i=0; i<52; i++)

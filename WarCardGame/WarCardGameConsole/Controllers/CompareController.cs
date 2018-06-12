@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WarCardGame.Models;
+using WarCardGameConsole.Models;
 
-namespace WarCardGame.Controllers
+namespace WarCardGameConsole.Controllers
 {
     public enum WarOutcome
     {
