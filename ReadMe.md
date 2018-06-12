@@ -3,12 +3,11 @@ This document provides goals and requirements for creating the classic card game
 ## Goals
 + Physically create an electronic version of the classic card game War.
 + Showcase knowledge of design processes and programming patterns
-## Background
-+ Is this section necessary?
 ## Assumptions
 + The game will be played by a single player against a single computer opponent.
 + Ace cards are high (they have the highest value, 14)
 + The player decks will be reshuffled when they are empty (assuming they have collected cards)
++ The deck is made up of 52 cards (4 suits of 13 cards each)
 ## User Stories
 1. A User wants to shuffle the deck and deal the cards.
 2. A User wants to play a card from their deck and match against the opponent.
@@ -39,7 +38,6 @@ What data needs to be stored and considered for scoring, gameplay, UI, etc.
 	+ Card Rank (2 - 13) - The "strength" of a card.  A higher rank will beat a lower rank card.  Cards of equal rank will begin a War.
 	+ Card Image - The associated image to be displayed with the card when it is played.
 2. Player Data - A dataclass associated with each player (human and computer) for recording statistics for use during debugging.
-	+ 
 ## Modules
 The various sub components of the game that will be combined to form the game.
 
