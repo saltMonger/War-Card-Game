@@ -24,7 +24,14 @@ namespace WarCardGameConsole
                 char controlChar = '0';
                 while (controlChar != ' ')
                 {
-                    controlChar = Console.ReadLine().ToLower()[0];
+                    try
+                    {
+                        controlChar = Console.ReadLine().ToLower()[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        controlChar = '0';
+                    }
                     if (controlChar == 's')
                     {
                         //play regular game, where the control draws a card with the space key and check their own stats
@@ -43,7 +50,14 @@ namespace WarCardGameConsole
                     }
                 }
                 Console.WriteLine("Would you like to play again? Type 'Y' for another game.");
-                controlChar = Console.ReadLine().ToLower()[0];
+                try
+                {
+                    controlChar = Console.ReadLine().ToLower()[0];
+                }
+                catch (Exception ex)
+                {
+                    controlChar = '0';
+                }
                 if (controlChar == 'y')
                 {
                     isContinuing = true;

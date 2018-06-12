@@ -78,7 +78,14 @@ namespace WarCardGameConsole.Controllers
                 while (controlChar != ' ')
                 {
                     Console.WriteLine("Press space to draw, and 's' to check stats. Press 'x' to exit the game.");
-                    controlChar = Console.ReadLine().ToLower()[0];
+                    try
+                    {
+                        controlChar = Console.ReadLine().ToLower()[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        controlChar = '0';
+                    }
                     if (controlChar == 's')
                     {
                         PrintPlayerStats();
@@ -119,6 +126,14 @@ namespace WarCardGameConsole.Controllers
                     if(!turboMode)
                     {
                         char controlChar = '0';
+                        try
+                        {
+                            controlChar = Console.ReadLine().ToLower()[0];
+                        }
+                        catch (Exception ex)
+                        {
+                            controlChar = '0';
+                        }
                         while (controlChar != ' ')
                         {
                             Console.WriteLine("Press space to draw, and 's' to check stats. Press 'x' to exit the game");
